@@ -7,11 +7,11 @@ serversocket.listen(5)
 
 try:
 	print "Waiting connection"
-	while True:
+	while True:							#loop
 		connection, address = serversocket.accept()
-		buf = connection.recv(1024)
-		if len(buf) > 0:
-			print 'Connected by:',address[0],buf
+		buf = connection.recv(1024)				
+		if len(buf) > 0:					#getting message from client
+			print 'Connected by:',address[0],buf		#printing address and message to screen
 
 except KeyboardInterrupt:
 	print "Serveri sammutetaan"
